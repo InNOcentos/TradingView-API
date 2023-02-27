@@ -369,15 +369,13 @@ module.exports = chartSession =>
 
       const inputs = getInputs(this.instance)
       if (inputs.pineId === BETTER_MACD) {
-        inputs['in_0']['v'] = 80
+        inputs.in_0.v = 80
       }
 
       if (inputs.pineId === UT_BOT_ALERTS) {
-        inputs['in_0']['v'] = 2
-        inputs['in_1']['v'] = 6
+        inputs.in_0.v = 2
+        inputs.in_1.v = 6
       }
-
-      console.log(inputs)
 
       chartSession.send('create_study', [
         chartSession.sessionID,
